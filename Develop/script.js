@@ -1,8 +1,43 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+var saveButtonEl = $('#save');
+var taskEl = $('#textarea');
+var h9= $('#h9');
+
 var today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY'));
+
+function handleSaveButton(event) {
+  event.preventDefault();  
+  // select form element by its `name` attribute and get its value
+  var AM9 = $('#h9').val(); 
+  // // print to the page
+  h9.textContent = AM9;
+  localStorage.setItem('9am', h9.textContent);
+ 
+}
+saveButtonEl.on('click', handleSaveButton);
+
+
+// function saveToLocalStorage(event) {
+//   event.preventDefault();
+
+//   var task9 = $('#h9-input')
+// }
+
+// saveButtonEl.on('click', function() {
+//   alert(taskEl);
+// });
+
+// var currentTime = dayjs();
+// $('#currentHour').text(currentTime.format('HH:mm'));
+
+// if (taskTime.isBefore(currentTime)) {
+//   rowEl.addClass('past');
+// } else if (projectDate.isSame(today)) {
+//   rowEl.addClass('project-today');
+// }
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -21,5 +56,5 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
+  // **TODO: Add code to display the current date in the header of the page.
 });
