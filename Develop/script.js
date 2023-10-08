@@ -4,11 +4,15 @@
 var saveButtonEl = $('#save');
 var taskEl = $('#textarea');
 var h9= $('#h9');
+var hour9=$('#hour-9');
+
+
 
 var today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY'));
 
-function handleSaveButton(event) {
+// pulled from weather app project
+function handleSaveButton9am(event) {
   event.preventDefault();  
   // select form element by its `name` attribute and get its value
   var AM9 = $('#h9').val(); 
@@ -17,27 +21,26 @@ function handleSaveButton(event) {
   localStorage.setItem('9am', h9.textContent);
  
 }
-saveButtonEl.on('click', handleSaveButton);
+saveButtonEl.on('click', handleSaveButton9am);
 
 
-// function saveToLocalStorage(event) {
-//   event.preventDefault();
 
-//   var task9 = $('#h9-input')
-// }
 
-// saveButtonEl.on('click', function() {
-//   alert(taskEl);
-// });
+var currentTime = dayjs();
+$('#currentHour').text(currentTime.format('HH:mm'));
 
-// var currentTime = dayjs();
-// $('#currentHour').text(currentTime.format('HH:mm'));
+var taskTime9 = dayjs().hour(9);
 
-// if (taskTime.isBefore(currentTime)) {
-//   rowEl.addClass('past');
-// } else if (projectDate.isSame(today)) {
-//   rowEl.addClass('project-today');
-// }
+
+if (taskTime9.isBefore(currentTime)) {
+  hour9.addClass('past');
+} else if (taskTime9.isSame(currentTime)) {
+  hour9.addClass('present');
+} else if (taskTime9.isAfter(currentTime)) {
+  hour9.addClass('future');
+}
+
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
