@@ -3,31 +3,75 @@
 // in the html.
 var saveButtonEl = $('#save');
 var taskEl = $('#textarea');
-var h9= $('#h9');
+var h9= document.getElementById('h9');
 var hour9=$('#hour-9');
+var blue=$('#blue');
+var AM9=localStorage.getItem('9am');
 
 
 
 var today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY'));
 
+var currentTime = dayjs();
+$('#currentHour').text(currentTime.format('HH:mm'));
+
+
+
+
+
+// var recentTask9= []
+function renderRecentTasks() {    
+  // var storedtask9am= JSON.parse(localStorage.getItem("9am"));
+ $('#h9').text(AM9);
+  // h9.textContent = recentTask9[1];
+   // recent2.textContent = recentTasks[1]
+  // recent3.textContent = recentTasks[2]
+}
+// function showRecentTasks() {
+//   localStorage.getItem('9am');
+// }
+
+
+
+function init() {
+  
+  // blue.textContent = AM9;
+  // pulled from a class instruction
+  // var storedtask9am= JSON.parse(localStorage.getItem("9am"));
+  // h9.textContent = storedtask9am;
+  
+  // if (storedtask9am !== null) {
+  //   recentTask9 = storedtask9am;
+  // }
+  renderRecentTasks();
+ 
+}
+//   function storeRecentTasks() {
+//   // Stringify and set key in localStorage to todos array
+//   localStorage.setItem("9am", JSON.stringify(recentTask9));
+  
+// }
+init();
 // pulled from weather app project
 function handleSaveButton9am(event) {
   event.preventDefault();  
   // select form element by its `name` attribute and get its value
-  var AM9 = $('#h9').val(); 
+  var AM9am = $('#h9').val(); 
   // // print to the page
-  h9.textContent = AM9;
-  localStorage.setItem('9am', h9.textContent);
+  h9.textContent = AM9am;
+  // recentTask9.push(h9.textContent)
+  localStorage.setItem('9am', JSON.stringify(h9.textContent));
  
+  // storeRecentTasks();
+  renderRecentTasks();
 }
 saveButtonEl.on('click', handleSaveButton9am);
+  
 
 
 
 
-var currentTime = dayjs();
-$('#currentHour').text(currentTime.format('HH:mm'));
 
 var taskTime9 = dayjs().hour(9);
 
@@ -39,6 +83,9 @@ if (taskTime9.isBefore(currentTime)) {
 } else if (taskTime9.isAfter(currentTime)) {
   hour9.addClass('future');
 }
+
+
+
 
 
 $(function () {
