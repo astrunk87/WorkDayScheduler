@@ -27,22 +27,47 @@ var h13=$('#13');
 var hour13=$('#hour-13');
 var PM1=localStorage.getItem('1pm');
 
+var saveButtonEl14 = $('#save14');
+var h14=$('#14');
+var hour14=$('#hour-14');
+var PM2=localStorage.getItem('2pm');
+
+var saveButtonEl15 = $('#save15');
+var h15=$('#15');
+var hour15=$('#hour-15');
+var PM3=localStorage.getItem('3pm');
+
+var saveButtonEl16 = $('#save16');
+var h16=$('#16');
+var hour16=$('#hour-16');
+var PM4=localStorage.getItem('4pm');
+
+var saveButtonEl17 = $('#save17');
+var h17=$('#17');
+var hour17=$('#hour-17');
+var PM5=localStorage.getItem('5pm');
+
 
 
 var today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY'));
 
 var currentTime = dayjs();
-$('#currentHour').text(currentTime.format('HH:mm'));
+$('#currentHour').text("current time: " + currentTime.format('HH:mm a'));
 
-// var recentTask9= []
+// below var with help from greg
+var hours = currentTime.format('H');
+
 function renderRecentTasks() {    
-  // var storedtask9am= JSON.parse(localStorage.getItem("9am"));
  $('#h9').text(AM9);
  $('#h10').text(AM10);
  $('#h11').text(AM11);
  $('#h12').text(PM12);
  $('#h13').text(PM1);
+ $('#h14').text(PM2);
+ $('#h15').text(PM3);
+ $('#h16').text(PM4);
+ $('#h17').text(PM5);
  
 }
 
@@ -97,10 +122,46 @@ function handleSaveButton1pm(event) {
 }
 saveButtonEl13.on('click', handleSaveButton1pm);
 
+function handleSaveButton2pm(event) {
+  event.preventDefault();  
+  // select form element by its `name` attribute and get its value
+  var hr14text = $('#h14').val(); 
+  h14.textContent = hr14text;
+  localStorage.setItem('2pm', h14.textContent);
+}
+saveButtonEl14.on('click', handleSaveButton2pm);
+
+function handleSaveButton3pm(event) {
+  event.preventDefault();  
+  // select form element by its `name` attribute and get its value
+  var hr15text = $('#h15').val(); 
+  h15.textContent = hr15text;
+  localStorage.setItem('3pm', h15.textContent);
+}
+saveButtonEl15.on('click', handleSaveButton3pm);
+
+function handleSaveButton4pm(event) {
+  event.preventDefault();  
+  // select form element by its `name` attribute and get its value
+  var hr16text = $('#h16').val(); 
+  h16.textContent = hr16text;
+  localStorage.setItem('4pm', h16.textContent);
+}
+saveButtonEl16.on('click', handleSaveButton4pm);
+
+function handleSaveButton5pm(event) {
+  event.preventDefault();  
+  // select form element by its `name` attribute and get its value
+  var hr17text = $('#h17').val(); 
+  h17.textContent = hr17text;
+  localStorage.setItem('5pm', h17.textContent);
+}
+saveButtonEl17.on('click', handleSaveButton5pm);
+
 init();
 
 
-var taskTime9 = dayjs().hour(9);
+var taskTime9 = dayjs().hour(20);
 if (taskTime9.isBefore(currentTime)) {
   hour9.addClass('past');
 } else if (taskTime9.isSame(currentTime)) {
@@ -143,6 +204,42 @@ if (taskTime13.isBefore(currentTime)) {
   hour13.addClass('present');
 } else if (taskTime13.isAfter(currentTime)) {
   hour13.addClass('future');
+};
+
+var taskTime14 = dayjs().hour(14);
+if (taskTime14.isBefore(currentTime)) {
+  hour14.addClass('past');
+} else if (taskTime14.isSame(currentTime)) {
+  hour14.addClass('present');
+} else if (taskTime14.isAfter(currentTime)) {
+  hour14.addClass('future');
+};
+
+var taskTime15 = dayjs().hour(15);
+if (taskTime15.isBefore(currentTime)) {
+  hour15.addClass('past');
+} else if (taskTime15.isSame(currentTime)) {
+  hour15.addClass('present');
+} else if (taskTime15.isAfter(currentTime)) {
+  hour15.addClass('future');
+};
+
+var taskTime16 = dayjs().hour(16);
+if (taskTime16.isBefore(currentTime)) {
+  hour16.addClass('past');
+} else if (taskTime16.isSame(currentTime)) {
+  hour16.addClass('present');
+} else if (taskTime16.isAfter(currentTime)) {
+  hour16.addClass('future');
+};
+
+var taskTime17 = dayjs().hour(17);
+if (taskTime17.isBefore(currentTime)) {
+  hour17.addClass('past');
+} else if (taskTime17.isSame(currentTime)) {
+  hour17.addClass('present');
+} else if (taskTime17.isAfter(currentTime)) {
+  hour17.addClass('future');
 };
 
 
