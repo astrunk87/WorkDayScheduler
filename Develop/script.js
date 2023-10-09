@@ -47,16 +47,11 @@ var h17=$('#17');
 var hour17=$('#hour-17');
 var PM5=localStorage.getItem('5pm');
 
-
-
 var today = dayjs();
 $('#currentDay').text(today.format('MMM D, YYYY'));
 
-var currentTime = dayjs();
-$('#currentHour').text("current time: " + currentTime.format('HH:mm a'));
-
-// below var with help from greg
-var hours = currentTime.format('H');
+const currentTime = dayjs().hour();
+$('#currentHour').text("current time: " + today.format('hh:mm a'));
 
 function renderRecentTasks() {    
  $('#h9').text(AM9);
@@ -68,7 +63,7 @@ function renderRecentTasks() {
  $('#h15').text(PM3);
  $('#h16').text(PM4);
  $('#h17').text(PM5);
- 
+
 }
 
 function init() {
@@ -161,84 +156,84 @@ saveButtonEl17.on('click', handleSaveButton5pm);
 init();
 
 
-var taskTime9 = dayjs().hour(20);
-if (taskTime9.isBefore(currentTime)) {
+var taskTime9 = 9;
+if (taskTime9 < currentTime) {
   hour9.addClass('past');
-} else if (taskTime9.isSame(currentTime)) {
+} else if (taskTime9 == currentTime) {
   hour9.addClass('present');
-} else if (taskTime9.isAfter(currentTime)) {
+} else if (taskTime9 > currentTime) {
   hour9.addClass('future');
 };
 
-var taskTime10 = dayjs().hour(10);
-if (taskTime10.isBefore(currentTime)) {
+var taskTime10 = 10;
+if (taskTime10 < currentTime) {
   hour10.addClass('past');
-} else if (taskTime10.isSame(currentTime)) {
+} else if (taskTime10 == currentTime) {
   hour10.addClass('present');
-} else if (taskTime10.isAfter(currentTime)) {
+} else if (taskTime10 > currentTime) {
   hour10.addClass('future');
 };
 
-var taskTime11 = dayjs().hour(11);
-if (taskTime11.isBefore(currentTime)) {
+var taskTime11 = 11;
+if (taskTime11 < currentTime) {
   hour11.addClass('past');
-} else if (taskTime11.isSame(currentTime)) {
+} else if (taskTime11 == currentTime) {
   hour11.addClass('present');
-} else if (taskTime11.isAfter(currentTime)) {
+} else if (taskTime11 > currentTime) {
   hour11.addClass('future');
 };
 
-var taskTime12 = dayjs().hour(12);
-if (taskTime12.isBefore(currentTime)) {
+var taskTime12 = 12;
+if (taskTime12 < currentTime) {
   hour12.addClass('past');
-} else if (taskTime12.isSame(currentTime)) {
+} else if (taskTime12 == currentTime) {
   hour12.addClass('present');
-} else if (taskTime12.isAfter(currentTime)) {
+} else if (taskTime12 > currentTime) {
   hour12.addClass('future');
 };
 
-var taskTime13 = dayjs().hour(13);
-if (taskTime13.isBefore(currentTime)) {
+var taskTime13 = 13;
+if (taskTime13 < currentTime) {
   hour13.addClass('past');
-} else if (taskTime13.isSame(currentTime)) {
+} else if (taskTime13 == currentTime) {
   hour13.addClass('present');
-} else if (taskTime13.isAfter(currentTime)) {
+} else if (taskTime13 > currentTime) {
   hour13.addClass('future');
 };
 
-var taskTime14 = dayjs().hour(14);
-if (taskTime14.isBefore(currentTime)) {
+var taskTime14 = 14;
+if (taskTime14 < currentTime) {
   hour14.addClass('past');
-} else if (taskTime14.isSame(currentTime)) {
+} else if (taskTime14 == currentTime) {
   hour14.addClass('present');
-} else if (taskTime14.isAfter(currentTime)) {
+} else if (taskTime14 > currentTime) {
   hour14.addClass('future');
 };
 
-var taskTime15 = dayjs().hour(15);
-if (taskTime15.isBefore(currentTime)) {
+var taskTime15 = 15;
+if (taskTime15 < currentTime) {
   hour15.addClass('past');
-} else if (taskTime15.isSame(currentTime)) {
+} else if (taskTime15 == currentTime) {
   hour15.addClass('present');
-} else if (taskTime15.isAfter(currentTime)) {
+} else if (taskTime15 > currentTime) {
   hour15.addClass('future');
 };
 
-var taskTime16 = dayjs().hour(16);
-if (taskTime16.isBefore(currentTime)) {
+var taskTime16 = 16;
+if (taskTime16 < currentTime) {
   hour16.addClass('past');
-} else if (taskTime16.isSame(currentTime)) {
+} else if (taskTime16 == currentTime) {
   hour16.addClass('present');
-} else if (taskTime16.isAfter(currentTime)) {
+} else if (taskTime16 > currentTime) {
   hour16.addClass('future');
 };
 
-var taskTime17 = dayjs().hour(17);
-if (taskTime17.isBefore(currentTime)) {
+var taskTime17 = 17;
+if (taskTime17 < currentTime) {
   hour17.addClass('past');
-} else if (taskTime17.isSame(currentTime)) {
+} else if (taskTime17 == currentTime) {
   hour17.addClass('present');
-} else if (taskTime17.isAfter(currentTime)) {
+} else if (taskTime17 > currentTime) {
   hour17.addClass('future');
 };
 
