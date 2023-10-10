@@ -1,6 +1,4 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+
 var taskEl = $('#textarea');
 var saveButtonEl9 = $('#save9');
 var h9= $('#h9');
@@ -73,8 +71,6 @@ function init() {
 
 // pulled from weather app project and edited
 function handleSaveButton9am() {
-  
-  // select form element by its `name` attribute and get its value
   var AM9text = $('#h9').val(); 
   h9.textContent = AM9text;
   localStorage.setItem('9am', h9.textContent);
@@ -82,8 +78,6 @@ function handleSaveButton9am() {
 saveButtonEl9.on('click', handleSaveButton9am);
   
 function handleSaveButton10am() {
- 
-  // select form element by its `name` attribute and get its value
   var AM10text = $('#h10').val(); 
   h10.textContent = AM10text;
   localStorage.setItem('10am', h10.textContent); 
@@ -91,8 +85,6 @@ function handleSaveButton10am() {
 saveButtonEl10.on('click', handleSaveButton10am);
 
 function handleSaveButton11am() {
- 
-  // select form element by its `name` attribute and get its value
   var AM11text = $('#h11').val(); 
   h11.textContent = AM11text;
   localStorage.setItem('11am', h11.textContent);
@@ -100,8 +92,6 @@ function handleSaveButton11am() {
 saveButtonEl11.on('click', handleSaveButton11am);
 
 function handleSaveButton12pm() {
-   
-  // select form element by its `name` attribute and get its value
   var hr12text = $('#h12').val(); 
   h12.textContent = hr12text;
   localStorage.setItem('12pm', h12.textContent);
@@ -109,8 +99,6 @@ function handleSaveButton12pm() {
 saveButtonEl12.on('click', handleSaveButton12pm);
 
 function handleSaveButton1pm() {
- 
-  // select form element by its `name` attribute and get its value
   var hr13text = $('#h13').val(); 
   h13.textContent = hr13text;
   localStorage.setItem('1pm', h13.textContent);
@@ -118,8 +106,6 @@ function handleSaveButton1pm() {
 saveButtonEl13.on('click', handleSaveButton1pm);
 
 function handleSaveButton2pm() {
-  
-  // select form element by its `name` attribute and get its value
   var hr14text = $('#h14').val(); 
   h14.textContent = hr14text;
   localStorage.setItem('2pm', h14.textContent);
@@ -127,8 +113,6 @@ function handleSaveButton2pm() {
 saveButtonEl14.on('click', handleSaveButton2pm);
 
 function handleSaveButton3pm() {
- 
-  // select form element by its `name` attribute and get its value
   var hr15text = $('#h15').val(); 
   h15.textContent = hr15text;
   localStorage.setItem('3pm', h15.textContent);
@@ -136,8 +120,6 @@ function handleSaveButton3pm() {
 saveButtonEl15.on('click', handleSaveButton3pm);
 
 function handleSaveButton4pm() {
-  
-  // select form element by its `name` attribute and get its value
   var hr16text = $('#h16').val(); 
   h16.textContent = hr16text;
   localStorage.setItem('4pm', h16.textContent);
@@ -145,8 +127,6 @@ function handleSaveButton4pm() {
 saveButtonEl16.on('click', handleSaveButton4pm);
 
 function handleSaveButton5pm() {
- 
-  // select form element by its `name` attribute and get its value
   var hr17text = $('#h17').val(); 
   h17.textContent = hr17text;
   localStorage.setItem('5pm', h17.textContent);
@@ -238,26 +218,3 @@ if (taskTime17 < currentTime) {
   hour17.addClass('future');
 };
 
-
-
-
-$(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // **TODO: Add code to display the current date in the header of the page.
-});
