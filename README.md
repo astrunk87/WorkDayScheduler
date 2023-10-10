@@ -19,11 +19,11 @@
 
 ## Installation
   no installation is needed. Follow the link below.
-  
+
 
 ## usage
   To use this program go to the live link. Once there you can enter you days appointments, tasks and events at the desidred time slot. Click on the save button and your input will be saves. The site will also help you see whats upcoming, past and present. Any time slot that has passed will be grey, if it is the current time slot it will be red, if it is a furture time it will be green. 
-
+![work day planner in use](<127.0.0.1_5500_Develop_index.html (1).png>)
 ## License
   Licensed under the [MIT](https://choosealicense.com/licenses/mit/) license 
 
