@@ -72,8 +72,8 @@ function init() {
 
 
 // pulled from weather app project and edited
-function handleSaveButton9am(event) {
-  event.preventDefault();  
+function handleSaveButton9am() {
+  
   // select form element by its `name` attribute and get its value
   var AM9text = $('#h9').val(); 
   h9.textContent = AM9text;
@@ -81,8 +81,8 @@ function handleSaveButton9am(event) {
 }
 saveButtonEl9.on('click', handleSaveButton9am);
   
-function handleSaveButton10am(event) {
-  event.preventDefault();  
+function handleSaveButton10am() {
+ 
   // select form element by its `name` attribute and get its value
   var AM10text = $('#h10').val(); 
   h10.textContent = AM10text;
@@ -90,8 +90,8 @@ function handleSaveButton10am(event) {
 }
 saveButtonEl10.on('click', handleSaveButton10am);
 
-function handleSaveButton11am(event) {
-  event.preventDefault();  
+function handleSaveButton11am() {
+ 
   // select form element by its `name` attribute and get its value
   var AM11text = $('#h11').val(); 
   h11.textContent = AM11text;
@@ -99,8 +99,8 @@ function handleSaveButton11am(event) {
 }
 saveButtonEl11.on('click', handleSaveButton11am);
 
-function handleSaveButton12pm(event) {
-  event.preventDefault();  
+function handleSaveButton12pm() {
+   
   // select form element by its `name` attribute and get its value
   var hr12text = $('#h12').val(); 
   h12.textContent = hr12text;
@@ -108,8 +108,8 @@ function handleSaveButton12pm(event) {
 }
 saveButtonEl12.on('click', handleSaveButton12pm);
 
-function handleSaveButton1pm(event) {
-  event.preventDefault();  
+function handleSaveButton1pm() {
+ 
   // select form element by its `name` attribute and get its value
   var hr13text = $('#h13').val(); 
   h13.textContent = hr13text;
@@ -117,8 +117,8 @@ function handleSaveButton1pm(event) {
 }
 saveButtonEl13.on('click', handleSaveButton1pm);
 
-function handleSaveButton2pm(event) {
-  event.preventDefault();  
+function handleSaveButton2pm() {
+  
   // select form element by its `name` attribute and get its value
   var hr14text = $('#h14').val(); 
   h14.textContent = hr14text;
@@ -126,8 +126,8 @@ function handleSaveButton2pm(event) {
 }
 saveButtonEl14.on('click', handleSaveButton2pm);
 
-function handleSaveButton3pm(event) {
-  event.preventDefault();  
+function handleSaveButton3pm() {
+ 
   // select form element by its `name` attribute and get its value
   var hr15text = $('#h15').val(); 
   h15.textContent = hr15text;
@@ -135,8 +135,8 @@ function handleSaveButton3pm(event) {
 }
 saveButtonEl15.on('click', handleSaveButton3pm);
 
-function handleSaveButton4pm(event) {
-  event.preventDefault();  
+function handleSaveButton4pm() {
+  
   // select form element by its `name` attribute and get its value
   var hr16text = $('#h16').val(); 
   h16.textContent = hr16text;
@@ -144,8 +144,8 @@ function handleSaveButton4pm(event) {
 }
 saveButtonEl16.on('click', handleSaveButton4pm);
 
-function handleSaveButton5pm(event) {
-  event.preventDefault();  
+function handleSaveButton5pm() {
+ 
   // select form element by its `name` attribute and get its value
   var hr17text = $('#h17').val(); 
   h17.textContent = hr17text;
